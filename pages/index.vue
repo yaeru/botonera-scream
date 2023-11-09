@@ -5,9 +5,9 @@
 		</h1>
 
 		<div class="grid">
-			<button @click="playAudio('assets/quotes/01.ogg')">Audio 1</button>
-			<button @click="playAudio('assets/02.ogg')">Audio 2</button>
-			<button @click="playAudio('/assets/02.ogg')">Audio 3</button>
+			<button @click="playAudio('quotes/01.ogg')">Audio 1</button>
+			<button @click="playAudio('quotes/02.ogg')">Audio 2</button>
+			<button @click="playAudio('quotes/03.ogg')">Audio 3</button>
 			<button @click="playAudio('quotes/04.ogg')">Audio 4</button>
 		</div>
 	</div>
