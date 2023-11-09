@@ -5,9 +5,9 @@
 		</h1>
 
 		<div class="grid">
-			<button @click="playAudio('quotes/01.ogg')">Audio 1</button>
-			<button @click="playAudio('/02.ogg')">Audio 2</button>
-			<button @click="playAudio('03.ogg')">Audio 3</button>
+			<button @click="playAudio('assets/quotes/01.ogg')">Audio 1</button>
+			<button @click="playAudio('assets/02.ogg')">Audio 2</button>
+			<button @click="playAudio('/assets/02.ogg')">Audio 3</button>
 			<button @click="playAudio('/quotes/04.ogg')">Audio 4</button>
 		</div>
 	</div>
@@ -30,14 +30,14 @@
 		methods: {
 			playAudio(audioSrc) {
 				if (this.audio) {
-        // Detener la reproducción si ya hay un audio reproduciéndose
+				// Detener la reproducción si ya hay un audio reproduciéndose
 					this.audio.pause();
 				}
 
-      // Crear una nueva instancia del objeto de audio
+				// Crear una nueva instancia del objeto de audio
 				this.audio = new Audio(audioSrc);
 
-      // Reproducir el nuevo audio
+				// Reproducir el nuevo audio
 				this.audio.play();
 			}
 		}
