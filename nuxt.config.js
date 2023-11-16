@@ -7,9 +7,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'BotoneraScream',
+    title: 'Ghostface Botonera',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'es'
     },
     meta: [
       { charset: 'utf-8' },
@@ -39,11 +39,25 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/pwa',
     ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     ],
+
+  pwa: {
+    manifest: {
+      name: 'Ghostface Botonera',
+      short_name: 'GFBotonera',
+      lang: 'es',
+      useWebmanifestExtension: false,
+      theme_color: '#383838',
+      background_color: '#383838',
+      display: 'minimal-ui',
+      orientation: 'portrait',
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
