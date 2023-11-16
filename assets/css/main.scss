@@ -30,8 +30,11 @@ a:hover {
 
 /**/
 .plastic-box {
-	margin-top: 2rem;
 	position: relative;
+	margin-top: 1rem;
+	@media (min-width: 981px) {
+		margin-top: 2rem;
+	}
 
 	&:after {
 		content: "";
@@ -47,17 +50,27 @@ a:hover {
 	}
 
 	.plastic-box-top {
-		padding: 2rem 1rem;
+		padding: 1.5rem 1rem;
 		border-radius: $radius-l;
 		background-color: $muted;
 		box-shadow: inset 0 0 15px 10px rgba(255, 255, 255, 1);
 		border: solid 1px #ccc;
 		position: relative;
 		z-index: 2;
+		@media (min-width: 981px) {
+			padding: 2rem 1rem;
+		}
 		h1 {
-			margin-bottom: 1.5rem;
+			margin-bottom: 1rem;
 			font-style: italic;
 			font-weight: 700;
+			font-size: 1.6rem;
+			line-height: 1.2em;
+			@media (min-width: 981px) {
+				margin-bottom: 1.5rem;
+				font-size: 2rem;
+				line-height: 1.2em;
+			}
 		}
 	}
 }
@@ -71,18 +84,24 @@ a:hover {
 .section {
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-}
-.section+.section {
-	padding-top: 0;
-}
-@media (min-width: 981px) {
-	.section {
+	@media (min-width: 981px) {
 		padding-top: 3rem;
 		padding-bottom: 3rem;
 	}
 }
+.section+.section {
+	padding-top: 0;
+}
+
 footer.section {
-	padding-top: 3rem;
+	padding-top: 2.5rem;
+	padding-bottom: 1rem;
+	@media (min-width: 981px) {
+		padding-top: 3rem;
+	}
+	p {
+		margin-bottom: 0;
+	}
 }
 
 /* Text */
@@ -93,9 +112,12 @@ h1, h2, h3, h4, h5, h5 {}
 
 /* Grids */
 .btn-grid {
+	padding-bottom: 5px;
 	display: grid;
 	gap: 1rem;
 	grid-template-columns: repeat(2, 1fr);
+	max-height: calc(100vh - 230px);
+	overflow-y: scroll;
 }
 @media (min-width: 641px) {
 	.btn-grid {
