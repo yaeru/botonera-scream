@@ -1,24 +1,20 @@
 <template>
-	<div>
-		<h1>
-			Botonera
-		</h1>
-
-		<div class="grid">
-			<button @click="playAudio('quotes/01.ogg')">Audio 1</button>
-			<button @click="playAudio('quotes/02.ogg')">Audio 2</button>
-			<button @click="playAudio('quotes/03.ogg')">Audio 3</button>
-			<button @click="playAudio('quotes/04.ogg')">Audio 4</button>
+	<div class="container">
+		<div class="plastic-box">
+			<div class="plastic-box-top">
+				<h1 class="relieve">
+					Telephone Voice Changer
+				</h1>
+				<div class="btn-grid">
+					<button v-for="index in 36" :key="index" @click="playAudio(`quotes/${String(index).padStart(2, '0')}.ogg`)" class="btn">Audio {{ index }}</button>
+				</div>
+			</div>
 		</div>
+		<footer class="section">
+			<credits />
+		</footer>
 	</div>
 </template>
-<style type="text/css">
-	.grid {
-		display: grid;
-		gap: 20px;
-		grid-template-columns: repeat(3, 1fr);
-	}
-</style>
 
 <script>
 	export default {

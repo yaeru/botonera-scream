@@ -13,11 +13,14 @@
     "core-js": "^3.25.3",
     "file-loader": "^6.2.0",
     "nuxt": "^2.15.8",
-    "url-loader": "^4.1.1",
     "push-dir": "^0.4.1",
+    "url-loader": "^4.1.1",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "sass-loader": "10"
+  }
 }
