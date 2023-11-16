@@ -5,8 +5,9 @@
 				<h1 class="relieve">
 					Telephone Voice Changer
 				</h1>
-				<div class="btn-grid">
-					<button v-for="index in 36" :key="index" @click="playAudio(`quotes/${String(index).padStart(2, '0')}.ogg`)" class="btn">Audio {{ index }}</button>
+				<div class="btn-grid-home">
+					<a href="/buttons" class="btn">Modo Botones</a>
+					<a href="/random" class="btn">Modo Película</a>
 				</div>
 			</div>
 		</div>
@@ -18,24 +19,5 @@
 
 <script>
 	export default {
-		data() {
-			return {
-				audio: null
-			};
-		},
-		methods: {
-			playAudio(audioSrc) {
-				if (this.audio) {
-				// Detener la reproducción si ya hay un audio reproduciéndose
-					this.audio.pause();
-				}
-
-				// Crear una nueva instancia del objeto de audio
-				this.audio = new Audio(audioSrc);
-
-				// Reproducir el nuevo audio
-				this.audio.play();
-			}
-		}
 	}
 </script>
