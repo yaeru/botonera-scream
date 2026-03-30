@@ -15,39 +15,28 @@ export default {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 			{ hid: 'description', name: 'description', content: '' },
 			{ name: 'format-detection', content: 'telephone=no' }
-			],
+		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: 'favicon.png' }
-			],
-		head: {
-			script: [
-			{
-				src: "https://www.googletagmanager.com/gtag/js?id=G-4CYFZFVT7V",
-				async: true,
-				crossorigin: "anonymous"
-			},
-			{
-				type: 'text/javascript',
-				src: "~/assets/ga.js",
-				
-				async: true,
-				crossorigin: "anonymous"
-			},
-			],
-		}
+		],
+		script: [
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-4CYFZFVT7V',
+        async: true
+      }
+    ],
 	},
 
   // Global CSS: https://go.nuxtjs.dev/config-css
 	css: [
-    // CSS file in the project
 		'@/assets/css/main.css',
-    // SCSS file in the project
 		'@/assets/css/main.scss'
-		],
+	],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [
-		],
+    { src: '~/plugins/gtag.js', mode: 'client' }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
@@ -55,11 +44,15 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 	buildModules: [
 		'@nuxtjs/pwa',
-		],
+	],
 
   // Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
-		],
+	],
+
+	// gtag: {
+	// 	id: 'G-4CYFZFVT7V'
+	// },
 
 	pwa: {
 		manifest: {
@@ -81,14 +74,14 @@ export default {
 			config.module.rules.push({
         test: /\.(mp3|ogg)$/i, // Agrega los formatos de archivo de audio que quieres manejar
         use: [
-        {
-        	loader: 'url-loader',
-        	options: {
+        	{
+        		loader: 'url-loader',
+        		options: {
               limit: 8192, // Si el archivo es más grande, se manejará con file-loader
               name: 'audio/[name].[ext]'
             }
           }
-          ]
+        ]
       });
 		}
 	}
