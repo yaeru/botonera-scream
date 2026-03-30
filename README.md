@@ -1,5 +1,7 @@
 # BotoneraScream
 
+
+
 ## Build Setup
 
 ```bash
@@ -15,6 +17,10 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# Para publicar en Github Pages:
+$ yarn generate
+$ yarn deploy
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
